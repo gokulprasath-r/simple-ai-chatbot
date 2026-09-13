@@ -63,16 +63,19 @@ chatForm.addEventListener('submit', async (event) => {
     showLoader();
 
     try {
-        const response = await fetch('', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
+        const response = await fetch(
+            'https://simple-ai-chatbot-mu.vercel.app/chat',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    session_id: sessionId,
+                    message: message,
+                }),
             },
-            body: JSON.stringify({
-                session_id: sessionId,
-                message: message,
-            }),
-        });
+        );
 
         const data = await response.json();
 
