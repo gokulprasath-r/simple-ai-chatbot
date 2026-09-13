@@ -33,6 +33,11 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
 
+@app.get("/")
+def index():
+    return {
+        "home" : "welcome"
+    }
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest):
