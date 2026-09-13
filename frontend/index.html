@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>AI Chatbot</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    </head>
+
+    <body class="bg-gray-950 text-white min-h-screen">
+        <div class="max-w-3xl mx-auto h-screen flex flex-col">
+            <!-- Header -->
+            <header class="p-5 border-b border-gray-800">
+                <h1 class="text-xl font-semibold">AI Chatbot</h1>
+            </header>
+
+            <!-- Messages -->
+            <main
+                id="chatContainer"
+                class="flex-1 overflow-y-auto p-5 space-y-4"
+            ></main>
+
+            <!-- Input -->
+            <div class="p-5 border-t border-gray-800">
+                <form id="chatForm" class="flex gap-3">
+                    <input
+                        id="messageInput"
+                        type="text"
+                        placeholder="Ask something..."
+                        autocomplete="off"
+                        class="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+                    />
+
+                    <button
+                        type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 px-5 rounded-lg"
+                    >
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
